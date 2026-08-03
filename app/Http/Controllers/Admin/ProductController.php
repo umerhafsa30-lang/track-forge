@@ -99,13 +99,13 @@ public function create()
 
         $product->update($validated);
 
-        return redirect()->route('admin.products.index')->with('success', 'Product update ho gaya!');
+        return redirect()->route('admin.products.index')->with('success', 'Product updated successfully!');
     }
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return back()->with('success', 'Product delete ho gaya.');
+        return back()->with('success', 'Product deleted successfully.');
     }
 public function generateDescription(Request $request)
 {

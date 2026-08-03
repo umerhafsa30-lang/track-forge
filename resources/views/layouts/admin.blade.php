@@ -350,7 +350,7 @@
     <div class="sidebar">
 
         <a href="{{ route('admin.dashboard') }}" class="brand">
-            <img src="{{ asset('images/logo.jpg') }}" alt="TrackForge Logo">
+            <img src="{{ asset('images/trackforge-logo.png') }}" alt="TrackForge Logo">
             <span>TrackForge</span>
         </a>
 

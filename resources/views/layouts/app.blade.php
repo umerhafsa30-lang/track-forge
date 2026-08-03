@@ -241,7 +241,7 @@ footer.site-footer::before {
         <a class="navbar-brand fw-bold d-flex align-items-center"
    href="{{ route('home') }}"
    style="color:#FFD700 !important;font-size:28px;">
-    <img src="{{ asset('images/logo.jpg') }}" alt="TrackForge  Logo" style="height:40px; margin-right:8px;">
+    <img src="{{ asset('images/trackforge-logo.png') }}" alt="TrackForge Logo" style="height:40px; margin-right:8px;">
     TrackForge
 </a>
 
