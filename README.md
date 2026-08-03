@@ -151,16 +151,19 @@ Admin panel: `http://127.0.0.1:8000/admin/login`
 ![Dashboard](screenshots/dashboard.png)
 
 ---
+### 🏷️ Brands
+![brand](screenshots/brand.png)
+---
 
 ### 📂 Categories
 
-![Categories](screenshots/categories.png)
+![Categories](screenshots/category.png)
 
 ---
 
 ### 🎟️ Coupons
 
-![Coupons](screenshots/coupons.png)
+![Coupons](screenshots/coupon.png)
 
 
 ## 🗺️ Roadmap
