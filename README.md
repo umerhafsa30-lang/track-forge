@@ -121,36 +121,34 @@ Admin panel: `http://127.0.0.1:8000/admin/login`
 ### 🏠 Home Page
 
 ![Home](screenshots/home.png)
+![Home](screenshots/home1.png)
+![Home](screenshots/home3.png)
+![Home](screenshots/home2.png)
+![Home](screenshots/home4.png)
 
 ---
+### 🛒 Shopping Cart
 
+![Cart](screenshots/cart.png)
+![Cart](screenshots/cart1.png)
+
+---
+### 💳 Checkout
+
+![Checkout](screenshots/checkout.png)
+
+---
 ### 🚗 Product Details
 
 ![Product](screenshots/product.png)
 
 ---
 
-### 🛒 Shopping Cart
 
-![Cart](screenshots/cart.png)
-
----
-
-### 💳 Checkout
-
-![Checkout](screenshots/checkout.png)
-
----
 
 ### 🔐 Admin Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
-
----
-
-### 📦 Products Management
-
-![Products](screenshots/products.png)
 
 ---
 
