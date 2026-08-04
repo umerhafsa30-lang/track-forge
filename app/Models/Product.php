@@ -68,17 +68,15 @@ public function reviews()
         return $specs;
     }
 
-    public function getImageUrlFullAttribute()
-    {
-        if (empty($this->image_url)) {
-            return null;
-        }
-
-      
-        if (str_starts_with($this->image_url, 'http')) {
-            return $this->image_url;
-        }
-
-        return asset('storage/' . $this->image_url);
+   public function getImageUrlFullAttribute()
+{
+    if (empty($this->image_url)) {
+        return null;
     }
-}
+
+    if (str_starts_with($this->image_url, 'http')) {
+        return $this->image_url;
+    }
+
+    return asset('storage/' . $this->image_url);
+}}
