@@ -245,6 +245,17 @@ footer.site-footer::before {
         width: 100%;
         max-width: 100%;
     }
+
+    /* FIX: Cart button badge was overlapping the "Go" button above it
+       on mobile because the badge is pulled up/out via translate-middle
+       and there wasn't enough space between the stacked elements. */
+    .navbar-collapse > .btn-brand.position-relative {
+        margin-top: 22px;
+        width: 100%;
+    }
+    .navbar-collapse > .btn-brand.position-relative .badge {
+        top: 0 !important;
+    }
 }
     </style>
 </head>
