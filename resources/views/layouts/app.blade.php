@@ -226,6 +226,26 @@ footer.site-footer::before {
 .img-skeleton-wrap .emoji-fallback.loaded {
     opacity: 1;
 }
+
+/* ===== MOBILE NAV FIXES ===== */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .navbar-nav {
+        margin-bottom: 10px;
+    }
+    .navbar form.d-flex {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+    .navbar form.d-flex .form-select,
+    .navbar form.d-flex .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
     </style>
 </head>
 <body>
@@ -263,12 +283,12 @@ footer.site-footer::before {
                 </li>
             </ul>
 
-            <form class="d-flex mx-auto align-items-center gap-2"
+            <form class="d-flex mx-auto align-items-center gap-2 flex-wrap w-100"
                   action="{{ route('shop.index') }}"
                   method="GET"
-                  style="width:600px;">
+                  style="max-width:600px;">
 
-                <div style="position:relative; flex:1;">
+                <div style="position:relative; flex:1; min-width:0;">
                     <input
                         class="form-control"
                         type="search"
