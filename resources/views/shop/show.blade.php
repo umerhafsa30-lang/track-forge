@@ -40,56 +40,6 @@
                     @endforeach
                 </div>
             @endif
-
-            <div class="mt-4">
-                <h5 class="fw-bold text-white mb-3">⭐ Customer Reviews</h5>
-
-                @if($product->reviews->count())
-                    <div class="d-flex flex-column gap-3 mb-4">
-                        @foreach($product->reviews as $review)
-                            <div class="p-3" style="background:#121212; border:1px solid rgba(212,175,55,.3); border-radius:8px;">
-                                <div style="color:#FFD100;">{{ str_repeat('⭐', $review->rating) }}</div>
-                                <p class="mt-2 mb-2 text-white">"{{ $review->comment }}"</p>
-                                <div class="fw-semibold" style="color:#D4AF37;">— {{ $review->name }}</div>
-                            </div>
-                        @endforeach
-                    </div>
-                @else
-                    <p class="text-white-50">No reviews yet. Be the first to share your experience!</p>
-                @endif
-
-                <div class="p-4" style="background:#0a0a0a; border:1px solid rgba(212,175,55,.3); border-radius:10px;">
-                    <h6 class="mb-3 text-white">✍️ Leave a Review</h6>
-
-                    <form action="{{ route('reviews.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-
-                        <div class="mb-2">
-                            <input type="text" name="name" class="form-control" placeholder="Your name" required
-                                   style="background:#000; color:#f4e9c9; border:1px solid rgba(212,175,55,.4);">
-                        </div>
-
-                        <div class="mb-2">
-                            <select name="rating" class="form-select" required>
-                                <option value="">Rating</option>
-                                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
-                                <option value="4">⭐⭐⭐⭐ Good</option>
-                                <option value="3">⭐⭐⭐ Average</option>
-                                <option value="2">⭐⭐ Poor</option>
-                                <option value="1">⭐ Bad</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <textarea name="comment" class="form-control" rows="3" placeholder="Write your review..." required
-                                      style="background:#000; color:#f4e9c9; border:1px solid rgba(212,175,55,.4);"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-brand">Submit Review</button>
-                    </form>
-                </div>
-            </div>
         </div>
 
         <div class="col-md-7">
@@ -182,6 +132,66 @@
 
         </div>
 
+    </div>
+
+    {{-- ============================================================
+         Reviews section moved OUTSIDE the row so it always renders
+         AFTER product details on both desktop and mobile. Mobile
+         stacks columns in DOM order, which was pushing reviews above
+         Add to Cart before this fix.
+    ============================================================ --}}
+    <div class="row mt-5">
+        <div class="col-12">
+
+            <h5 class="fw-bold text-white mb-3">⭐ Customer Reviews</h5>
+
+            @if($product->reviews->count())
+                <div class="d-flex flex-column gap-3 mb-4">
+                    @foreach($product->reviews as $review)
+                        <div class="p-3" style="background:#121212; border:1px solid rgba(212,175,55,.3); border-radius:8px;">
+                            <div style="color:#FFD100;">{{ str_repeat('⭐', $review->rating) }}</div>
+                            <p class="mt-2 mb-2 text-white">"{{ $review->comment }}"</p>
+                            <div class="fw-semibold" style="color:#D4AF37;">— {{ $review->name }}</div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="text-white-50">No reviews yet. Be the first to share your experience!</p>
+            @endif
+
+            <div class="p-4" style="background:#0a0a0a; border:1px solid rgba(212,175,55,.3); border-radius:10px; max-width:500px;">
+                <h6 class="mb-3 text-white">✍️ Leave a Review</h6>
+
+                <form action="{{ route('reviews.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                    <div class="mb-2">
+                        <input type="text" name="name" class="form-control" placeholder="Your name" required
+                               style="background:#000; color:#f4e9c9; border:1px solid rgba(212,175,55,.4);">
+                    </div>
+
+                    <div class="mb-2">
+                        <select name="rating" class="form-select" required>
+                            <option value="">Rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                            <option value="4">⭐⭐⭐⭐ Good</option>
+                            <option value="3">⭐⭐⭐ Average</option>
+                            <option value="2">⭐⭐ Poor</option>
+                            <option value="1">⭐ Bad</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea name="comment" class="form-control" rows="3" placeholder="Write your review..." required
+                                  style="background:#000; color:#f4e9c9; border:1px solid rgba(212,175,55,.4);"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-brand">Submit Review</button>
+                </form>
+            </div>
+
+        </div>
     </div>
 
     @if($related->count())
