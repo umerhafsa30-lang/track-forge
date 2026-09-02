@@ -69,7 +69,7 @@
     }
 }
 
-/* Global text fix — white text by default */
+
 body, p, span, li, label, small, td, th, h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
 }
@@ -85,7 +85,6 @@ body, p, span, li, label, small, td, th, h1, h2, h3, h4, h5, h6 {
 
 
 
-/* Links stay red as per your theme, not white */
 a {
     color: var(--red);
 }
@@ -246,9 +245,6 @@ footer.site-footer::before {
         max-width: 100%;
     }
 
-    /* FIX: Cart button badge was overlapping the "Go" button above it
-       on mobile because the badge is pulled up/out via translate-middle
-       and there wasn't enough space between the stacked elements. */
     .navbar-collapse > .btn-brand.position-relative {
         margin-top: 22px;
         width: 100%;
